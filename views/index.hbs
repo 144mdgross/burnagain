@@ -19,6 +19,26 @@
 
 <body>
     <main>
+      <h1> Add to the collection</h1>
+      <div class="row">
+   <form class="col s12" action="/" method="POST">
+     <div class="row">
+       <div class="input-field col s6">
+         <input placeholder="type here" id="artist-input" type="text" class="validate" name="artist">
+         <label for="first_name">Artist</label>
+       </div>
+       <div class="input-field col s6">
+         <input id="album_input" type="text" class="validate" name="album">
+         <label for="album">album</label>
+       </div>
+     </div>
+       <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+    <i class="material-icons right">send</i>
+  </button>
+     </div>
+   </form>
+ </div>
+
         <h1>Play with this Colleciton</h1>
         {{#each cd}}
             <h2>{{this.album}}</h2>

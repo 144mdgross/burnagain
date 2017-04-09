@@ -25,6 +25,21 @@ router.get('/:id', (req, res, next) => {
   })
 })
 
+router.post('/', (req, res, next) => {
+  knex('collection')
+  .insert([{
+    artist: req.body.artist,
+    album: req.body.album
+  }], '*')
+  .then(newCD => {
+    console.log(newCD);
+    res.redirect('/')
+  })
+  .catch(err => {
+    console.error(err);
+  })
+})
+
 router.patch('/:id', (req, res, next) => {
   let id = +req.params.id
 
