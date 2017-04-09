@@ -57,4 +57,19 @@ router.patch('/:id', (req, res, next) => {
   })
 })
 
+router.delete('/:id', (req, res, next) => {
+  let id = +req.params.id
+
+  knex('collection')
+  .where('id', id)
+  .del()
+  .then(gone => {
+    console.log("gone", gone)
+    res.json(true)
+  })
+  .catch(err => {
+    console.error(err)
+  })
+})
+
 module.exports = router;

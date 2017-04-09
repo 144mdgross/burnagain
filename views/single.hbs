@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/js/materialize.min.js"></script>
+
+    <!-- my js -->
+    <script src="javascripts/buttons.js" charset="utf-8"></script>
+
+    <meta charset="utf-8">
+    <title>CDs</title>
+</head>
+
+<body>
+    <main>
+        <h1>Play with this Colleciton</h1>
+
+        {{#each single}}
+            <h2>{{this.album}}</h2>
+            <h3>{{this.artist}}</h3>
+            <img src="https://i.stack.imgur.com/KXVax.gif" alt="image of cd" data-id="{{this.id}}">
+        {{/each}}
+
+        <div class="row">
+            <div class="row">
+                <div class="input-field col s6">
+                    <input id="artist" type="text" class="validate" name="artist">
+                    <label for="icon_prefix">artist</label>
+                </div>
+                <div class="input-field col s6">
+                    <input id="album" type="text" class="validate" name="album">
+                    <label for="icon_telephone">album</label>
+                </div>
+                <button id="update" class="btn waves-effect waves-light">update
+   <i class="material-icons right">Edit</i>
+ </button>
+ <button id="delete" class="btn waves-effect waves-light">delete
+</button>
+            </div>
+        </div>
+
+    </main>
+</body>
+
+</html>
